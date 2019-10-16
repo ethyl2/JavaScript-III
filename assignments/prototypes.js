@@ -88,12 +88,12 @@ CharacterStats.prototype.takeDamage = function() {
       height: 1,
     },
     healthPoints: 5,
-    name: 'Bruce',
-    team: 'Mage Guild',
+    name: '⚗✨ Bruce',
+    team: '👬✨ Mage Guild',
     weapons: [
-      'Staff of Shamalama',
+      '⚚ Staff of Shamalama',
     ],
-    language: 'Common Tongue',
+    language: '👅 Common Tongue',
   });
 
   const swordsman = new Humanoid({
@@ -104,13 +104,13 @@ CharacterStats.prototype.takeDamage = function() {
       height: 2,
     },
     healthPoints: 15,
-    name: 'Sir Mustachio',
-    team: 'The Round Table',
+    name: '⚔️ Sir Mustachio',
+    team: '🏰 The Round Table',
     weapons: [
-      'Giant Sword',
-      'Shield',
+      '🗡️ Giant Sword',
+      '🛡️ Shield',
     ],
-    language: 'Common Tongue',
+    language: '👅 Common Tongue',
   });
 
   const archer = new Humanoid({
@@ -121,13 +121,13 @@ CharacterStats.prototype.takeDamage = function() {
       height: 4,
     },
     healthPoints: 10,
-    name: 'Lilith',
-    team: 'Forest Kingdom',
+    name: '🏹 Lilith',
+    team: '🌲🌲🌲 Forest Kingdom',
     weapons: [
-      'Bow',
-      'Dagger',
+      '🏹 Bow',
+      '🗡️ Dagger',
     ],
-    language: 'Elvish',
+    language: '🎶 Elvish',
   });
 
   console.log(mage.createdAt); // Today's date
@@ -175,13 +175,13 @@ CharacterStats.prototype.takeDamage = function() {
       height: 4,
     },
     healthPoints: 3,
-    name: 'Bozo the Court Jester',
-    team: 'Inner Court',
+    name: '🃏 Bozo the Court Jester',
+    team: '👑 Inner Court',
     weapons: [
-      'Bad Jokes',
-      'Marotte',
+      '😜 Bad Jokes',
+      '🍭 Marotte',
     ],
-    language: 'Olde English',
+    language: '🇬🇧 Olde English',
     superpower: 'cleverness',
   });
 
@@ -211,14 +211,14 @@ CharacterStats.prototype.takeDamage = function() {
       height: 8,
     },
     healthPoints: 15,
-    name: 'Paul Bunyan',
+    name: '👨‍ Paul Bunyan',
     team: 'The Green Giants',
     weapons: [
-      'Club',
-      'Brute Force',
+      '🏌️ Club',
+      '💪 Brute Force',
     ],
-    language: 'Shouting',
-    costume: 'plaid',
+    language: '🗣️ Shouting',
+    costume: '👕 plaid',
   });
 
   console.log(paulBunyan.costume);
