@@ -143,6 +143,91 @@ CharacterStats.prototype.takeDamage = function() {
 
 
   // Stretch task: 
-  // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
-  // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
-  // * Create two new objects, one a villain and one a hero and fight it out with methods!
+  // * Create Villain and Hero constructor functions that inherit 
+  // from the Humanoid constructor function. 
+  // * Give the Hero and Villains different methods that could be used to 
+  // remove health points from objects which could result in destruction 
+  // if health gets to 0 or drops below 0;
+  // * Create two new objects, one a villain and one a hero 
+  // and fight it out with methods!
+
+  function Villain(villainAttrs) {
+    Humanoid.call(this, villainAttrs);
+    this.superpower = villainAttrs.superpower;
+  }
+
+  Villain.prototype = Object.create(Humanoid.prototype);
+  Villain.prototype.attack = function(opponent) {
+    opponent.healthPoints--;
+    if (opponent.healthPoints < 1) {
+      opponent.destroy();
+      return `${this.name} has eliminated ${opponent.name}!`;
+    } else {
+      return `${this.name} has reduced ${opponent.name}'s health points to ${opponent.healthPoints}`;
+    }
+  }
+
+  const bozo = new Villain( {
+    createdAt: new Date(),
+    dimensions: {
+      length: 1,
+      width: 2,
+      height: 4,
+    },
+    healthPoints: 3,
+    name: 'Bozo the Court Jester',
+    team: 'Inner Court',
+    weapons: [
+      'Bad Jokes',
+      'Marotte',
+    ],
+    language: 'Olde English',
+    superpower: 'cleverness',
+  });
+
+  console.log(bozo.name);
+
+  function Hero(heroAttrs) {
+    Humanoid.call(this, heroAttrs);
+    this.costume = heroAttrs.costume;
+  }
+
+  Hero.prototype = Object.create(Humanoid.prototype);
+  Hero.prototype.defend = function(opponent) {
+    opponent.healthPoints--;
+    if (opponent.healthPoints < 1) {
+      opponent.destroy();
+      return `${this.name} has fought bravely and eliminated ${opponent.name}!`;
+    } else {
+      return `${this.name} used a ${this.weapons[0]} and has reduced ${opponent.name}'s health points to ${opponent.healthPoints}.`;
+    }
+  }
+
+  const paulBunyan = new Hero({
+    createdAt: new Date(),
+    dimensions: {
+      length: 2,
+      width: 2,
+      height: 8,
+    },
+    healthPoints: 15,
+    name: 'Paul Bunyan',
+    team: 'The Green Giants',
+    weapons: [
+      'Club',
+      'Brute Force',
+    ],
+    language: 'Shouting',
+    costume: 'plaid',
+  });
+
+  console.log(paulBunyan.costume);
+
+  console.log(bozo.attack(paulBunyan));
+  for (let i=0; i<3; i++) {
+    console.log(paulBunyan.defend(bozo));
+  }
+  
+  
+
+  
